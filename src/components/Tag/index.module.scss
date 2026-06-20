@@ -1,0 +1,69 @@
+@use '@/styles/variables.scss' as *;
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-sm;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.tagSm {
+  padding: 4rpx 12rpx;
+  font-size: 22rpx;
+}
+
+.tagMd {
+  padding: 8rpx 20rpx;
+  font-size: 24rpx;
+}
+
+.tagText {
+  line-height: 1;
+}
+
+.tagPrimary {
+  background: rgba(255, 122, 69, 0.1);
+  color: $color-primary;
+}
+
+.tagSuccess {
+  background: rgba(46, 204, 113, 0.1);
+  color: $color-success;
+}
+
+.tagWarning {
+  background: rgba(241, 196, 15, 0.1);
+  color: $color-warning;
+}
+
+.tagError {
+  background: rgba(231, 76, 60, 0.1);
+  color: $color-error;
+}
+
+.tagInfo {
+  background: rgba(52, 152, 219, 0.1);
+  color: $color-info;
+}
+
+.tagOccupied {
+  background: rgba(230, 126, 34, 0.1);
+  color: $color-status-occupied;
+}
+
+.tagFree {
+  background: rgba(52, 152, 219, 0.1);
+  color: $color-status-free;
+}
+
+.tagReserved {
+  background: rgba(155, 89, 182, 0.1);
+  color: $color-status-reserved;
+}
+
+.tagOutline {
+  background: transparent;
+  border: 1rpx solid;
+}

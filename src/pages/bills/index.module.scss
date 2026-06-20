@@ -1,0 +1,133 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #FFF1E8 0%, #FFF8F3 300rpx);
+  padding: 0 32rpx 32rpx;
+}
+
+.summaryCard {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  border-radius: $radius-xl;
+  padding: $spacing-xl;
+  margin-bottom: $spacing-lg;
+  box-shadow: 0 8rpx 32rpx rgba(255, 122, 69, 0.25);
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: $spacing-md;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.summaryCol {
+  flex: 1;
+  text-align: center;
+  color: $color-text-white;
+}
+
+.summaryCol + .summaryCol {
+  border-left: 1rpx solid rgba(255, 255, 255, 0.2);
+}
+
+.summaryNum {
+  font-size: 44rpx;
+  font-weight: 700;
+  display: block;
+  line-height: 1.2;
+}
+
+.summaryLabel {
+  font-size: 22rpx;
+  opacity: 0.85;
+  margin-top: 4rpx;
+  display: block;
+}
+
+.summaryAmount {
+  padding-top: $spacing-md;
+  margin-top: $spacing-md;
+  border-top: 1rpx solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.summaryAmountLabel {
+  font-size: 26rpx;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.summaryAmountValue {
+  font-size: 48rpx;
+  font-weight: 700;
+  color: $color-text-white;
+}
+
+.summaryAmountUnit {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.85);
+  margin-right: 4rpx;
+}
+
+.tabsBar {
+  display: flex;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: 8rpx;
+  margin-bottom: $spacing-lg;
+  box-shadow: $shadow-card;
+}
+
+.tabItem {
+  flex: 1;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-md;
+  font-size: 26rpx;
+  font-weight: 500;
+  color: $color-text-secondary;
+  transition: all $transition-base;
+}
+
+.tabItemActive {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-text-white;
+  font-weight: 600;
+  box-shadow: 0 4rpx 12rpx rgba(255, 122, 69, 0.25);
+}
+
+.searchBox {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-md $spacing-lg;
+  margin-bottom: $spacing-lg;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  box-shadow: $shadow-card;
+}
+
+.searchIcon {
+  font-size: 28rpx;
+  color: $color-text-tertiary;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  font-size: 26rpx;
+  color: $color-text-primary;
+}
+
+.searchPlaceholder {
+  flex: 1;
+  font-size: 26rpx;
+  color: $color-text-disabled;
+}

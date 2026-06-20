@@ -1,0 +1,178 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #FFF1E8 0%, #FFF8F3 300rpx);
+  padding: 0 32rpx 32rpx;
+}
+
+.profileCard {
+  background: linear-gradient(135deg, $color-secondary 0%, $color-secondary-light 100%);
+  border-radius: $radius-xl;
+  padding: $spacing-xl;
+  margin-bottom: $spacing-lg;
+  box-shadow: 0 8rpx 32rpx rgba(107, 76, 154, 0.25);
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.avatarBox {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: $radius-round;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatarText {
+  font-size: 56rpx;
+}
+
+.profileInfo {
+  flex: 1;
+  color: $color-text-white;
+}
+
+.profileName {
+  font-size: 36rpx;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.profileRole {
+  font-size: 24rpx;
+  opacity: 0.85;
+  display: block;
+}
+
+.menuSection {
+  margin-bottom: $spacing-lg;
+}
+
+.menuCard {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-card;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  padding: $spacing-lg;
+  transition: background $transition-base;
+
+  &:active {
+    background: $color-bg-hover;
+  }
+
+  & + & {
+    border-top: 1rpx solid $color-divider;
+  }
+}
+
+.menuIcon {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: $radius-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: $spacing-md;
+  flex-shrink: 0;
+  font-size: 36rpx;
+}
+
+.menuIconTables {
+  background: rgba(52, 152, 219, 0.12);
+}
+
+.menuIconGames {
+  background: rgba(107, 76, 154, 0.12);
+}
+
+.menuIconPricing {
+  background: rgba(255, 122, 69, 0.12);
+}
+
+.menuIconBills {
+  background: rgba(46, 204, 113, 0.12);
+}
+
+.menuIconData {
+  background: rgba(241, 196, 15, 0.12);
+}
+
+.menuIconAbout {
+  background: rgba(140, 120, 120, 0.12);
+}
+
+.menuContent {
+  flex: 1;
+}
+
+.menuTitle {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: $color-text-primary;
+  display: block;
+  margin-bottom: 4rpx;
+}
+
+.menuDesc {
+  font-size: 22rpx;
+  color: $color-text-tertiary;
+  display: block;
+}
+
+.menuArrow {
+  font-size: 28rpx;
+  color: $color-text-tertiary;
+  flex-shrink: 0;
+  margin-left: $spacing-sm;
+}
+
+.badge {
+  padding: 4rpx 12rpx;
+  border-radius: $radius-round;
+  background: $color-error;
+  color: $color-text-white;
+  font-size: 20rpx;
+  font-weight: 500;
+  margin-right: $spacing-sm;
+  flex-shrink: 0;
+}
+
+.statsMini {
+  display: flex;
+  gap: $spacing-md;
+  margin-top: $spacing-md;
+  flex-wrap: wrap;
+}
+
+.statsMiniItem {
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  flex: 1;
+  min-width: 45%;
+  box-shadow: $shadow-card;
+}
+
+.statsMiniLabel {
+  font-size: 22rpx;
+  color: $color-text-tertiary;
+  display: block;
+  margin-bottom: 4rpx;
+}
+
+.statsMiniValue {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: $color-text-primary;
+}

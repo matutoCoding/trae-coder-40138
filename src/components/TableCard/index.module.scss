@@ -1,0 +1,176 @@
+@use '@/styles/variables.scss' as *;
+
+.tableCard {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  box-shadow: $shadow-card;
+  transition: all $transition-base;
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: $shadow-card-hover;
+  }
+}
+
+.freeCard {
+  border-left: 6rpx solid $color-status-free;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-md;
+}
+
+.tableNoBox {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: $radius-md;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tableNo {
+  color: $color-text-white;
+  font-size: 26rpx;
+  font-weight: 700;
+}
+
+.tableName {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+  display: block;
+}
+
+.metaRow {
+  display: flex;
+  gap: $spacing-xl;
+  margin-bottom: $spacing-lg;
+  padding-bottom: $spacing-md;
+  border-bottom: 1rpx dashed $color-divider;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.metaLabel {
+  font-size: 24rpx;
+  color: $color-text-tertiary;
+}
+
+.metaValue {
+  font-size: 24rpx;
+  color: $color-text-secondary;
+  font-weight: 500;
+}
+
+.occupiedInfo {
+  background: $color-bg-soft;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  margin-bottom: $spacing-lg;
+}
+
+.playerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-sm;
+}
+
+.playerName {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: $color-text-primary;
+}
+
+.phone {
+  font-size: 24rpx;
+  color: $color-text-tertiary;
+}
+
+.timeRow {
+  margin-bottom: $spacing-sm;
+}
+
+.timeText {
+  font-size: 24rpx;
+  color: $color-text-secondary;
+}
+
+.durationRow {
+  display: flex;
+  gap: $spacing-sm;
+}
+
+.baseRateRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $color-bg-hover;
+  border-radius: $radius-md;
+  padding: $spacing-md $spacing-lg;
+  margin-bottom: $spacing-lg;
+}
+
+.baseRateLabel {
+  font-size: 24rpx;
+  color: $color-text-tertiary;
+}
+
+.baseRateValue {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: $color-primary;
+}
+
+.actionRow {
+  display: flex;
+}
+
+.actionBtn {
+  flex: 1;
+  height: 72rpx;
+  border-radius: $radius-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.openBtn {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+}
+
+.detailBtn {
+  background: $color-bg-hover;
+  border: 1rpx solid $color-border;
+}
+
+.actionBtnText {
+  font-size: 26rpx;
+  font-weight: 500;
+}
+
+.openBtn .actionBtnText {
+  color: $color-text-white;
+}
+
+.detailBtn .actionBtnText {
+  color: $color-text-secondary;
+}

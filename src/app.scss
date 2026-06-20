@@ -1,0 +1,81 @@
+page {
+  background-color: #FFF8F3;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: #2D1F1F;
+  font-size: 28rpx;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+view, text, button, input {
+  box-sizing: border-box;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  line-height: normal;
+}
+
+button::after {
+  border: none;
+}
+
+.pageRoot {
+  min-height: 100vh;
+  padding: 0 32rpx 32rpx;
+}
+
+.pageTitle {
+  font-size: 40rpx;
+  font-weight: 600;
+  color: #2D1F1F;
+  padding: 32rpx 0 24rpx;
+}
+
+.sectionTitle {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #2D1F1F;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.sectionTitle::before {
+  content: '';
+  display: inline-block;
+  width: 8rpx;
+  height: 28rpx;
+  background: linear-gradient(180deg, #FF7A45 0%, #FFA37A 100%);
+  border-radius: 4rpx;
+  margin-right: 16rpx;
+}
+
+.card {
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  padding: 32rpx;
+  box-shadow: 0 2rpx 12rpx rgba(255, 122, 69, 0.08);
+  margin-bottom: 24rpx;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flexBetween {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

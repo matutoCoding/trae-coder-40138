@@ -1,0 +1,125 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #FFF1E8 0%, #FFF8F3 300rpx);
+  padding: 0 32rpx 32rpx;
+}
+
+.statsBar {
+  display: flex;
+  gap: $spacing-md;
+  margin-bottom: $spacing-lg;
+}
+
+.statCard {
+  flex: 1;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-md;
+  box-shadow: $shadow-card;
+  text-align: center;
+}
+
+.statValue {
+  font-size: 44rpx;
+  font-weight: 700;
+  color: $color-primary;
+  display: block;
+  line-height: 1.2;
+}
+
+.statLabel {
+  font-size: 22rpx;
+  color: $color-text-tertiary;
+  margin-top: 4rpx;
+  display: block;
+}
+
+.freeStat .statValue {
+  color: $color-status-free;
+}
+
+.occupiedStat .statValue {
+  color: $color-status-occupied;
+}
+
+.filterBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-md;
+}
+
+.filterLabel {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: $color-text-primary;
+}
+
+.filterChips {
+  display: flex;
+  gap: $spacing-sm;
+}
+
+.filterChip {
+  padding: 10rpx 24rpx;
+  border-radius: $radius-button;
+  font-size: 24rpx;
+  background: $color-bg-card;
+  color: $color-text-secondary;
+  border: 1rpx solid $color-border;
+  transition: all $transition-base;
+}
+
+.filterChipActive {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-text-white;
+  border-color: transparent;
+}
+
+.timelineSection {
+  margin-bottom: $spacing-lg;
+}
+
+.timelineTitle {
+  @extend .sectionTitle;
+}
+
+.operationsBar {
+  position: fixed;
+  bottom: 40rpx;
+  left: 32rpx;
+  right: 32rpx;
+  display: flex;
+  gap: $spacing-md;
+  z-index: 100;
+}
+
+.opBtn {
+  @include button-reset;
+  flex: 1;
+  height: $button-height-lg;
+  border-radius: $radius-button;
+  background: $color-bg-card;
+  box-shadow: $shadow-float;
+  transition: all $transition-base;
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.opBtnPrimary {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+}
+
+.opBtnText {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: $color-text-secondary;
+}
+
+.opBtnPrimary .opBtnText {
+  color: $color-text-white;
+}

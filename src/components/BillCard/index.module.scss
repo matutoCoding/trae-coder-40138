@@ -1,0 +1,121 @@
+@use '@/styles/variables.scss' as *;
+
+.billCard {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  box-shadow: $shadow-card;
+  transition: all $transition-base;
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: $shadow-card-hover;
+  }
+}
+
+.cardHeader {
+  margin-bottom: $spacing-md;
+  padding-bottom: $spacing-md;
+  border-bottom: 1rpx dashed $color-divider;
+}
+
+.orderNoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-sm;
+}
+
+.orderNo {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: $color-text-primary;
+  @include text-ellipsis;
+  max-width: 400rpx;
+}
+
+.createTime {
+  font-size: 22rpx;
+  color: $color-text-tertiary;
+}
+
+.cardBody {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-sm $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.infoLabel {
+  font-size: 24rpx;
+  color: $color-text-tertiary;
+  flex-shrink: 0;
+}
+
+.infoValue {
+  font-size: 24rpx;
+  color: $color-text-secondary;
+  font-weight: 500;
+  @include text-ellipsis;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-md;
+  background: $color-bg-soft;
+  border-radius: $radius-md;
+}
+
+.breakdownPreview {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  flex-wrap: wrap;
+  flex: 1;
+  margin-right: $spacing-md;
+}
+
+.breakdownTag {
+  padding: 4rpx 12rpx;
+  border-radius: $radius-xs;
+  background: rgba(255, 122, 69, 0.1);
+}
+
+.breakdownTagMore {
+  padding: 4rpx 12rpx;
+  border-radius: $radius-xs;
+  background: rgba(140, 120, 120, 0.1);
+}
+
+.breakdownTagText {
+  font-size: 20rpx;
+  color: $color-text-secondary;
+}
+
+.totalBox {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  flex-shrink: 0;
+}
+
+.discountLabel {
+  font-size: 24rpx;
+  color: $color-success;
+  font-weight: 500;
+}
+
+.totalAmount {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: $color-primary;
+}

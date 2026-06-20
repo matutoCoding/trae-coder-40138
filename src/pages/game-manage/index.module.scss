@@ -1,0 +1,567 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #F3EEFF 0%, #FFF8F3 300rpx);
+  padding: 0 32rpx 32rpx;
+}
+
+.headerBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-lg;
+}
+
+.headerTitle {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: $color-text-primary;
+}
+
+.addBtn {
+  @include button-reset;
+  padding: 12rpx 28rpx;
+  border-radius: $radius-button;
+  background: linear-gradient(135deg, $color-secondary 0%, $color-secondary-light 100%);
+  font-size: 24rpx;
+  font-weight: 600;
+  color: $color-text-white;
+  box-shadow: 0 4rpx 16rpx rgba(107, 76, 154, 0.3);
+
+  &:active {
+    transform: scale(0.97);
+    opacity: 0.9;
+  }
+}
+
+.statsBar {
+  display: flex;
+  gap: $spacing-md;
+  margin-bottom: $spacing-lg;
+  flex-wrap: wrap;
+}
+
+.statsItem {
+  flex: 1;
+  min-width: 45%;
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.statsLabel {
+  font-size: 22rpx;
+  color: $color-text-tertiary;
+  display: block;
+  margin-bottom: 6rpx;
+}
+
+.statsValue {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: $color-text-primary;
+}
+
+.statsValueLow {
+  color: $color-warning;
+}
+
+.statsValueOut {
+  color: $color-error;
+}
+
+.searchBox {
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-sm $spacing-md;
+  margin-bottom: $spacing-md;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  box-shadow: $shadow-card;
+}
+
+.searchIcon {
+  font-size: 28rpx;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  font-size: 26rpx;
+  color: $color-text-primary;
+}
+
+.filterBar {
+  display: flex;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md;
+  flex-wrap: wrap;
+}
+
+.filterChip {
+  @include button-reset;
+  padding: 10rpx 24rpx;
+  border-radius: $radius-button;
+  background: $color-bg-card;
+  font-size: 22rpx;
+  font-weight: 500;
+  color: $color-text-secondary;
+  box-shadow: $shadow-card;
+
+  &:active {
+    opacity: 0.85;
+  }
+}
+
+.filterChipActive {
+  background: linear-gradient(135deg, $color-secondary 0%, $color-secondary-light 100%);
+  color: $color-text-white;
+}
+
+.tabBar {
+  display: flex;
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  padding: 6rpx;
+  margin-bottom: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.tabItem {
+  @include button-reset;
+  flex: 1;
+  height: 64rpx;
+  border-radius: $radius-sm;
+  font-size: 24rpx;
+  font-weight: 500;
+  color: $color-text-secondary;
+  transition: all $transition-base;
+}
+
+.tabItemActive {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-text-white;
+  box-shadow: 0 4rpx 12rpx rgba(255, 122, 69, 0.25);
+}
+
+.gameList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.gameItem {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  box-shadow: $shadow-card;
+  transition: all $transition-base;
+
+  &:active {
+    transform: scale(0.99);
+  }
+}
+
+.gameItemHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-md;
+  margin-bottom: $spacing-md;
+}
+
+.gameIconBox {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: $radius-md;
+  background: linear-gradient(135deg, rgba(107, 76, 154, 0.12) 0%, rgba(255, 122, 69, 0.12) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gameIcon {
+  font-size: 44rpx;
+}
+
+.gameInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.gameName {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: $color-text-primary;
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.gameTags {
+  display: flex;
+  gap: $spacing-xs;
+  flex-wrap: wrap;
+  margin-bottom: 8rpx;
+}
+
+.gameDesc {
+  font-size: 22rpx;
+  color: $color-text-tertiary;
+  display: block;
+  @include text-ellipsis;
+}
+
+.gameDetailGrid {
+  display: flex;
+  gap: $spacing-md;
+  padding-top: $spacing-md;
+  border-top: 1rpx solid $color-divider;
+}
+
+.gameDetailItem {
+  flex: 1;
+}
+
+.gameDetailLabel {
+  font-size: 22rpx;
+  color: $color-text-tertiary;
+  display: block;
+  margin-bottom: 4rpx;
+}
+
+.gameDetailValue {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: $color-text-primary;
+}
+
+.gameDetailValueOk {
+  color: $color-success;
+}
+
+.gameDetailValueWarn {
+  color: $color-warning;
+}
+
+.gameDetailValueBad {
+  color: $color-error;
+}
+
+.gameActions {
+  display: flex;
+  gap: $spacing-sm;
+  margin-top: $spacing-md;
+  padding-top: $spacing-md;
+  border-top: 1rpx solid $color-divider;
+}
+
+.actionBtn {
+  @include button-reset;
+  flex: 1;
+  height: 64rpx;
+  border-radius: $radius-button;
+  font-size: 24rpx;
+  font-weight: 500;
+  transition: all $transition-base;
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+.actionBtnRent {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-text-white;
+  box-shadow: 0 4rpx 12rpx rgba(255, 122, 69, 0.25);
+}
+
+.actionBtnReturn {
+  background: rgba(46, 204, 113, 0.12);
+  color: $color-success;
+}
+
+.actionBtnEdit {
+  background: rgba(52, 152, 219, 0.12);
+  color: #2980B9;
+}
+
+.actionBtnDisabled {
+  background: $color-bg-hover;
+  color: $color-text-disabled;
+  box-shadow: none;
+}
+
+.rentalList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.rentalItem {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  box-shadow: $shadow-card;
+}
+
+.rentalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-md;
+}
+
+.rentalInfo {
+  flex: 1;
+}
+
+.rentalGame {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: $color-text-primary;
+  display: block;
+  margin-bottom: 6rpx;
+}
+
+.rentalMeta {
+  font-size: 22rpx;
+  color: $color-text-tertiary;
+  display: block;
+}
+
+.rentalTime {
+  font-size: 22rpx;
+  color: $color-text-tertiary;
+  text-align: right;
+}
+
+.rentalTimeValue {
+  display: block;
+  font-weight: 600;
+  color: $color-text-secondary;
+  margin-top: 2rpx;
+}
+
+.rentalActions {
+  display: flex;
+  gap: $spacing-sm;
+  padding-top: $spacing-md;
+  border-top: 1rpx solid $color-divider;
+}
+
+.rentalReturnBtn {
+  @include button-reset;
+  flex: 1;
+  height: 64rpx;
+  border-radius: $radius-button;
+  background: linear-gradient(135deg, $color-success 0%, #58D68D 100%);
+  font-size: 26rpx;
+  font-weight: 600;
+  color: $color-text-white;
+  box-shadow: 0 4rpx 12rpx rgba(46, 204, 113, 0.25);
+
+  &:active {
+    transform: scale(0.97);
+    opacity: 0.9;
+  }
+}
+
+.formCard {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.formSectionTitle {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.formSectionIcon {
+  font-size: 28rpx;
+}
+
+.formRow {
+  display: flex;
+  align-items: center;
+  padding: $spacing-md 0;
+  border-bottom: 1rpx solid $color-divider;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.formLabel {
+  width: 180rpx;
+  font-size: 26rpx;
+  color: $color-text-secondary;
+  flex-shrink: 0;
+}
+
+.formInput {
+  flex: 1;
+  font-size: 26rpx;
+  color: $color-text-primary;
+  text-align: right;
+}
+
+.formValue {
+  flex: 1;
+  font-size: 26rpx;
+  color: $color-text-primary;
+  text-align: right;
+  font-weight: 500;
+}
+
+.formPlaceholder {
+  flex: 1;
+  font-size: 26rpx;
+  color: $color-text-disabled;
+  text-align: right;
+}
+
+.typeOptions {
+  display: flex;
+  gap: $spacing-sm;
+  margin-top: $spacing-md;
+  flex-wrap: wrap;
+}
+
+.typeOption {
+  @include button-reset;
+  padding: 10rpx 24rpx;
+  border-radius: $radius-button;
+  background: $color-bg-hover;
+  font-size: 24rpx;
+  font-weight: 500;
+  color: $color-text-secondary;
+
+  &:active {
+    opacity: 0.85;
+  }
+}
+
+.typeOptionActive {
+  background: linear-gradient(135deg, $color-secondary 0%, $color-secondary-light 100%);
+  color: $color-text-white;
+}
+
+.qtyRow {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.qtyBtn {
+  @include button-reset;
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: $radius-round;
+  background: $color-bg-hover;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: $color-text-primary;
+
+  &:active {
+    opacity: 0.85;
+  }
+}
+
+.qtyBtnPlus {
+  background: linear-gradient(135deg, $color-secondary 0%, $color-secondary-light 100%);
+  color: $color-text-white;
+}
+
+.qtyValue {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: $color-text-primary;
+  min-width: 80rpx;
+  text-align: center;
+}
+
+.editHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing-lg;
+}
+
+.backBtn {
+  @include button-reset;
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: $radius-round;
+  background: $color-bg-card;
+  font-size: 32rpx;
+  color: $color-text-primary;
+  box-shadow: $shadow-card;
+  margin-right: $spacing-md;
+
+  &:active {
+    opacity: 0.85;
+  }
+}
+
+.bottomBar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: $spacing-md $spacing-lg;
+  padding-bottom: calc(32rpx + env(safe-area-inset-bottom));
+  background: $color-bg-card;
+  box-shadow: 0 -4rpx 20rpx rgba(0, 0, 0, 0.08);
+  display: flex;
+  gap: $spacing-md;
+}
+
+.cancelBtn {
+  @include button-reset;
+  width: 200rpx;
+  height: $button-height-lg;
+  border-radius: $radius-button;
+  background: $color-bg-hover;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: $color-text-secondary;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.85;
+    transform: scale(0.98);
+  }
+}
+
+.confirmBtn {
+  @include button-reset;
+  flex: 1;
+  height: $button-height-lg;
+  border-radius: $radius-button;
+  background: linear-gradient(135deg, $color-secondary 0%, $color-secondary-light 100%);
+  font-size: 30rpx;
+  font-weight: 600;
+  color: $color-text-white;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.emptyBox {
+  padding: 80rpx 0;
+}

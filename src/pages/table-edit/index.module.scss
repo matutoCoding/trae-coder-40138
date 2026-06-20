@@ -1,0 +1,426 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #FFF1E8 0%, #FFF8F3 300rpx);
+  padding: 0 32rpx 32rpx;
+}
+
+.headerBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-lg;
+}
+
+.headerTitle {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: $color-text-primary;
+}
+
+.addBtn {
+  @include button-reset;
+  padding: 12rpx 28rpx;
+  border-radius: $radius-button;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  font-size: 24rpx;
+  font-weight: 600;
+  color: $color-text-white;
+  box-shadow: 0 4rpx 16rpx rgba(255, 122, 69, 0.3);
+
+  &:active {
+    transform: scale(0.97);
+    opacity: 0.9;
+  }
+}
+
+.statsBar {
+  display: flex;
+  gap: $spacing-md;
+  margin-bottom: $spacing-lg;
+}
+
+.statsItem {
+  flex: 1;
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.statsLabel {
+  font-size: 22rpx;
+  color: $color-text-tertiary;
+  display: block;
+  margin-bottom: 6rpx;
+}
+
+.statsValue {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: $color-text-primary;
+}
+
+.statsValueOccupied {
+  color: $color-warning;
+}
+
+.statsValueFree {
+  color: $color-success;
+}
+
+.filterBar {
+  display: flex;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md;
+  flex-wrap: wrap;
+}
+
+.filterChip {
+  @include button-reset;
+  padding: 10rpx 24rpx;
+  border-radius: $radius-button;
+  background: $color-bg-card;
+  font-size: 22rpx;
+  font-weight: 500;
+  color: $color-text-secondary;
+  box-shadow: $shadow-card;
+
+  &:active {
+    opacity: 0.85;
+  }
+}
+
+.filterChipActive {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-text-white;
+}
+
+.tableList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.tableItem {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  box-shadow: $shadow-card;
+  transition: all $transition-base;
+
+  &:active {
+    transform: scale(0.99);
+  }
+}
+
+.tableItemHeader {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  margin-bottom: $spacing-md;
+}
+
+.tableNoBadge {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: $radius-round;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-text-white;
+  font-size: 28rpx;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 4rpx 12rpx rgba(255, 122, 69, 0.3);
+}
+
+.tableNoBadgeAlt {
+  background: linear-gradient(135deg, $color-secondary 0%, $color-secondary-light 100%);
+  box-shadow: 0 4rpx 12rpx rgba(107, 76, 154, 0.3);
+}
+
+.tableInfo {
+  flex: 1;
+}
+
+.tableName {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: $color-text-primary;
+  display: block;
+  margin-bottom: 6rpx;
+}
+
+.tableMeta {
+  font-size: 22rpx;
+  color: $color-text-tertiary;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.tableMetaSep {
+  width: 2rpx;
+  height: 20rpx;
+  background: $color-divider;
+}
+
+.tableDetailGrid {
+  display: flex;
+  gap: $spacing-md;
+  padding-top: $spacing-md;
+  border-top: 1rpx solid $color-divider;
+}
+
+.tableDetailItem {
+  flex: 1;
+}
+
+.tableDetailLabel {
+  font-size: 22rpx;
+  color: $color-text-tertiary;
+  display: block;
+  margin-bottom: 4rpx;
+}
+
+.tableDetailValue {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: $color-text-primary;
+}
+
+.tableDetailValueRate {
+  color: $color-primary;
+}
+
+.tableActions {
+  display: flex;
+  gap: $spacing-sm;
+  margin-top: $spacing-md;
+  padding-top: $spacing-md;
+  border-top: 1rpx solid $color-divider;
+}
+
+.actionBtn {
+  @include button-reset;
+  flex: 1;
+  height: 64rpx;
+  border-radius: $radius-button;
+  font-size: 24rpx;
+  font-weight: 500;
+  transition: all $transition-base;
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+.actionBtnEdit {
+  background: rgba(52, 152, 219, 0.1);
+  color: #2980B9;
+}
+
+.actionBtnDelete {
+  background: rgba(231, 76, 60, 0.1);
+  color: $color-error;
+}
+
+.formCard {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.formSectionTitle {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.formSectionIcon {
+  font-size: 28rpx;
+}
+
+.formRow {
+  display: flex;
+  align-items: center;
+  padding: $spacing-md 0;
+  border-bottom: 1rpx solid $color-divider;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.formLabel {
+  width: 180rpx;
+  font-size: 26rpx;
+  color: $color-text-secondary;
+  flex-shrink: 0;
+}
+
+.formInput {
+  flex: 1;
+  font-size: 26rpx;
+  color: $color-text-primary;
+  text-align: right;
+}
+
+.formValue {
+  flex: 1;
+  font-size: 26rpx;
+  color: $color-text-primary;
+  text-align: right;
+  font-weight: 500;
+}
+
+.formPlaceholder {
+  flex: 1;
+  font-size: 26rpx;
+  color: $color-text-disabled;
+  text-align: right;
+}
+
+.typeOptions {
+  display: flex;
+  gap: $spacing-sm;
+  margin-top: $spacing-md;
+  flex-wrap: wrap;
+}
+
+.typeOption {
+  @include button-reset;
+  padding: 10rpx 24rpx;
+  border-radius: $radius-button;
+  background: $color-bg-hover;
+  font-size: 24rpx;
+  font-weight: 500;
+  color: $color-text-secondary;
+
+  &:active {
+    opacity: 0.85;
+  }
+}
+
+.typeOptionActive {
+  background: linear-gradient(135deg, $color-secondary 0%, $color-secondary-light 100%);
+  color: $color-text-white;
+}
+
+.capacityRow {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.capacityBtn {
+  @include button-reset;
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: $radius-round;
+  background: $color-bg-hover;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: $color-text-primary;
+
+  &:active {
+    opacity: 0.85;
+  }
+}
+
+.capacityBtnPlus {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-text-white;
+}
+
+.capacityValue {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: $color-text-primary;
+  min-width: 80rpx;
+  text-align: center;
+}
+
+.bottomBar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: $spacing-md $spacing-lg;
+  padding-bottom: calc(32rpx + env(safe-area-inset-bottom));
+  background: $color-bg-card;
+  box-shadow: 0 -4rpx 20rpx rgba(0, 0, 0, 0.08);
+  display: flex;
+  gap: $spacing-md;
+}
+
+.cancelBtn {
+  @include button-reset;
+  width: 200rpx;
+  height: $button-height-lg;
+  border-radius: $radius-button;
+  background: $color-bg-hover;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: $color-text-secondary;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.85;
+    transform: scale(0.98);
+  }
+}
+
+.confirmBtn {
+  @include button-reset;
+  flex: 1;
+  height: $button-height-lg;
+  border-radius: $radius-button;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  font-size: 30rpx;
+  font-weight: 600;
+  color: $color-text-white;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.editHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing-lg;
+}
+
+.backBtn {
+  @include button-reset;
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: $radius-round;
+  background: $color-bg-card;
+  font-size: 32rpx;
+  color: $color-text-primary;
+  box-shadow: $shadow-card;
+  margin-right: $spacing-md;
+
+  &:active {
+    opacity: 0.85;
+  }
+}
+
+.emptyBox {
+  padding: 80rpx 0;
+}
