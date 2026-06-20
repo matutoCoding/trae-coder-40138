@@ -7,6 +7,7 @@ import { formatTime, todayStart, addHours, getHoursDiff } from '../../utils/time
 export interface TimeSlotBarProps {
   occupancies: Occupancy[];
   tableName?: string;
+  selectedIds?: string[];
   onSlotClick?: (occ: Occupancy) => void;
 }
 
@@ -15,7 +16,7 @@ const DAY_START_HOUR = 8;
 const DAY_END_HOUR = 24;
 const VISIBLE_HOURS = DAY_END_HOUR - DAY_START_HOUR;
 
-const TimeSlotBar: React.FC<TimeSlotBarProps> = ({ occupancies, tableName, onSlotClick }) => {
+const TimeSlotBar: React.FC<TimeSlotBarProps> = ({ occupancies, tableName, selectedIds = [], onSlotClick }) => {
   const dayStart = todayStart();
   const now = Date.now();
 
@@ -70,11 +71,12 @@ const TimeSlotBar: React.FC<TimeSlotBarProps> = ({ occupancies, tableName, onSlo
 
             const isActive = slot.status === 'active' && slot.startAt <= now && slot.endAt >= now;
             const isPast = slot.endAt < now || slot.status === 'completed';
+            const isSelected = selectedIds.includes(slot.id);
 
             return (
               <View
                 key={slot.id}
-                className={`${styles.slotBlock} ${isActive ? styles.slotActive : ''} ${isPast ? styles.slotPast : ''}`}
+                className={`${styles.slotBlock} ${isActive ? styles.slotActive : ''} ${isPast ? styles.slotPast : ''} ${isSelected ? styles.slotSelected : ''}`}
                 style={{
                   left: `${left}%`,
                   width: `${Math.max(width, 2)}%`
@@ -83,7 +85,9 @@ const TimeSlotBar: React.FC<TimeSlotBarProps> = ({ occupancies, tableName, onSlo
               >
                 {width > 8 && (
                   <>
-                    <Text className={styles.slotPlayer}>{slot.playerName}</Text>
+                    <Text className={styles.slotPlayer}>
+                      {isSelected ? '✓ ' : ''}{slot.playerName}
+                    </Text>
                     {width > 15 && (
                       <Text className={styles.slotTime}>
                         {formatTime(slot.startAt)}-{formatTime(slot.endAt)}

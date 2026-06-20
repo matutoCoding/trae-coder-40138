@@ -86,6 +86,13 @@
   opacity: 0.7;
 }
 
+.slotSelected {
+  outline: 4rpx solid #E67E22;
+  outline-offset: 2rpx;
+  box-shadow: 0 0 0 2rpx rgba(230, 126, 34, 0.4), 0 0 24rpx rgba(230, 126, 34, 0.3);
+  z-index: 5;
+}
+
 .slotPlayer {
   font-size: 20rpx;
   color: $color-text-white;

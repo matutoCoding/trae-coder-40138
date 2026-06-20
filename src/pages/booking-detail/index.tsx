@@ -13,7 +13,7 @@ const presetDurations = [1, 2, 3, 4, 6, 8];
 
 const BookingDetailPage: React.FC = () => {
   const router = useRouter();
-  const { tables, tiers, createOccupancy, createBillFromOccupancy, games } = useStore();
+  const { tables, tiers, createOccupancyWithAutoMerge, games } = useStore();
 
   const tableId = router.params.tableId || '';
   const table = useMemo(() => tables.find(t => t.id === tableId), [tables, tableId]);
@@ -68,21 +68,31 @@ const BookingDetailPage: React.FC = () => {
       Taro.showToast({ title: '请选择桌台', icon: 'none' });
       return;
     }
-    if (table.status !== 'free') {
-      Taro.showToast({ title: '该桌台不可用', icon: 'none' });
-      return;
-    }
-    createOccupancy({
+    const result = createOccupancyWithAutoMerge({
       tableId: table.id,
       playerName: playerName.trim(),
       playerPhone: playerPhone.trim(),
       startAt: customStart,
-      endAt: endTime
+      endAt: endTime,
+      selectedGameIds: selectedGames
     });
+    if (!result.success) {
+      return;
+    }
     Taro.showToast({ title: '开台成功', icon: 'success' });
     setTimeout(() => {
-      Taro.navigateBack();
-    }, 800);
+      if (result.billId) {
+        Taro.redirectTo({
+          url: `/pages/bill-detail/index?billId=${result.billId}`
+        });
+      } else if (result.occupancyId) {
+        Taro.redirectTo({
+          url: `/pages/bill-detail/index?occupancyId=${result.occupancyId}`
+        });
+      } else {
+        Taro.navigateBack();
+      }
+    }, 600);
   };
 
   if (!table) {
